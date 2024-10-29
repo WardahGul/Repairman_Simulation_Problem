@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    z-index: 1;
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2C3E50;
+}
+
+
+.input-group {
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    border: 1px solid #2C3E50;
+    border-radius: 5px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input[type="number"]:focus {
+    border: 1px solid #3498db;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.results {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid #2ECC71;
+    border-radius: 5px;
+}
+
+.results h2 {
+    color: #333; /* Change color as needed */
+    margin-bottom: 10px; /* Spacing below the heading */
+}
+
+.gear {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: url('https://img.icons8.com/ios-filled/100/000000/gear.png') no-repeat center center;
+    background-size: contain;
+    animation: rotate 10s linear infinite;
+}
+
+.gear-1 {
+    top: 10%;
+    left: 5%;
+    animation-duration: 8s;
+}
+
+.gear-2 {
+    top: 30%;
+    left: 70%;
+    animation-duration: 12s;
+}
+
+.gear-3 {
+    top: 50%;
+    left: 30%;
+    animation-duration: 10s;
+}
+
+.gear-4 {
+    top: 80%;
+    left: 90%;
+    animation-duration: 14s;
+}
+
+.gear-5 {
+    top: 80%;
+    left: 10%;
+    animation-duration: 14s;
+}
+
+.gear-6{
+    top: 5%;
+    left: 95%;
+    animation-duration: 14s;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

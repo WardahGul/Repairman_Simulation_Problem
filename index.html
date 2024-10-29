@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Repairman Problem Calculator</title>
+</head>
+<body>
+    <div class="gear gear-1"></div>
+    <div class="gear gear-2"></div>
+    <div class="gear gear-3"></div>
+    <div class="gear gear-4"></div>
+    <div class="gear gear-5"></div>
+    <div class="gear gear-6"></div>
+    <div class="container">
+        <h1>Repairman Problem Calculation</h1>
+        <form method="POST" action="{{ url_for('calculate') }}">
+            <div class="input-group">
+                <label for="mean_breakdown">Mean Breakdown Time (T_B):</label>
+                <input type="number" id="mean_breakdown" name="mean_breakdown" required>
+            </div>
+            <div class="input-group">
+                <label for="std_breakdown">Std Dev Breakdown Time (σ_B):</label>
+                <input type="number" id="std_breakdown" name="std_breakdown" required>
+            </div>
+            <div class="input-group">
+                <label for="mean_repair">Mean Repair Time (T_R):</label>
+                <input type="number" id="mean_repair" name="mean_repair" required>
+            </div>
+            <div class="input-group">
+                <label for="std_repair">Std Dev Repair Time (σ_R):</label>
+                <input type="number" id="std_repair" name="std_repair" required>
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if results %}
+        <div class="results">
+            <h2>RESULTS</h2>
+            <p>Probability of Breakdown Before Repair: {{ results.prob_breakdown_before_repair }}</p>
+            <p>Expected Number of Events Until Halt: {{ results.expected_events }}</p>
+            <p>Expected Total Time Until Halt: {{ results.expected_time }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
